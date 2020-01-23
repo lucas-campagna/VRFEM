@@ -47,7 +47,6 @@ int main(int argc, char **argv){
 			double f = 0;
 
 			p_i = el.shapef(i);
-			cout << "passou shapef(i="<<i<<")" << endl;
 
 			// eq 55
 			f = el.integrate(&fun,i);
@@ -57,7 +56,6 @@ int main(int argc, char **argv){
 				double K;
 				
 				p_j = el.shapef(j);
-				cout << "passou shapef(j="<<j<<")" << endl;
 
 				K = el.area * (p_i.b + p_i.a[0]*p_j.a[0] + p_i.a[1]*p_j.a[1]);
 
@@ -79,7 +77,7 @@ int main(int argc, char **argv){
 		}
 	}
 
-	cout << "#MaxIt: " << GaussSeidel(&A,&x,&b, 1e-5,500) << endl;
+	cout << "Max Iterations: " << GaussSeidel(&A,&x,&b, 1e-5,500) << endl;
 
 	// Resultados
 	// funcao forca

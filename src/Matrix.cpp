@@ -7,7 +7,7 @@ using namespace std;
 Matrix::Matrix(int order) : Matrix(order,order){}
 
 Matrix::Matrix(int nrows, int ncols) : nrows(nrows), ncols(ncols){
-	resize();
+	reset();
 }
 
 
@@ -15,7 +15,7 @@ Matrix::Matrix(std::initializer_list<Vector> ivlist) : nrows(ivlist.size()), nco
 
 	std::initializer_list<Vector>::iterator it = ivlist.begin();
 
-	resize();
+	reset();
 
 	for (int i = 0; i < nrows; ++i){
 		for (int j = 0; j < ncols; ++j)
@@ -29,7 +29,7 @@ Matrix::Matrix(std::initializer_list<Vector> ivlist) : nrows(ivlist.size()), nco
 Matrix::Matrix(std::initializer_list<double> ivlist, int nrows, int ncols) : nrows(nrows), ncols(ncols){
 	std::initializer_list<double>::iterator it = ivlist.begin();
 	assert(nrows*ncols == ivlist.size());
-	resize();
+	reset();
 	for (int i = 0; i < nrows; ++i)
 		for (int j = 0; j < ncols; ++j){
 			data[i][j] = (double) *it;
@@ -40,14 +40,14 @@ Matrix::Matrix(std::initializer_list<double> ivlist, int nrows, int ncols) : nro
 void Matrix::resize(int nrows, int ncols){
 	nrows = nrows;
 	ncols = ncols;
-	resize();
+	reset();
 }
 
 void Matrix::resize(int order){
 	resize(order, order);
 }
 
-void Matrix::resize(){
+void Matrix::reset(){
 	data = (double **) malloc(sizeof(double *) * nrows);
 	
 	for (int i = 0; i < nrows; ++i)

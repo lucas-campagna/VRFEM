@@ -2,8 +2,6 @@
 
 using namespace std;
 
-Mesh2d::Mesh2d() : Mesh2d(0,0,1,1,11,11){};
-
 Mesh2d::Mesh2d(int x0, int y0, int x1, int y1, int nx, int ny) : x0(x0), y0(y0), x1(x1), y1(y1), nx(nx), ny(ny){
 	Vector aux(2);
 

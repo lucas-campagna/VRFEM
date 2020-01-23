@@ -26,7 +26,7 @@ class Matrix{
 
 		void resize(int,int);
 		void resize(int);
-		void resize();
+		void reset();
 
 		void zeros();
 		void ones();

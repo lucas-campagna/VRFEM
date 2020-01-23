@@ -16,8 +16,7 @@ class Mesh2d
 	std::vector<Element> elements;
 
 	std::vector<Vector> nodes;
-	Mesh2d();
-	Mesh2d(int x0, int y0, int x1, int y1, int nx, int ny);
+	Mesh2d(int x0 = 0, int y0 = 0, int x1 = 1, int y1 = 1, int nx = 11, int ny = 11);
 	int isBorder(int);
 };
 

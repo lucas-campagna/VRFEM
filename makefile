@@ -3,7 +3,7 @@
 #vpath %.o ./obj
 #vpath %.cpp ./src
 
-CC=mpicxx
+CC=g++
 CFLAGS=-std=c++11 -lm -llapack
 LDFLAGS=-I./include 
 

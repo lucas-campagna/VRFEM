@@ -9,9 +9,9 @@
 #include <iostream>
 
 class Vector{
-		std::vector<double> x;
+		std::vector<double> x; 
 	public:
-		int dim;
+		int dim; 
 		Vector();
 		Vector(int dim);
 		Vector(double *vec,int n);
@@ -48,14 +48,14 @@ class Vector{
 		void operator= (Vector);
 		void operator= (double);
 		void operator= (double *);
+		std::string show();
+		// std::string operator() ();
 
 		// void operator< (Vector);
 		int operator== (Vector);
 		int operator!= (Vector);
 		double & operator[] (int);
 
-		std::string show();
-		// std::string operator() ();
 };
 
 #endif
